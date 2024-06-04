@@ -1,27 +1,30 @@
-import eslint from '@eslint/js';
-import tseslint from 'typescript-eslint';
-import globals from 'globals';
+import eslint from '@eslint/js'
+import tseslint from 'typescript-eslint'
+import globals from 'globals'
+import prettier from 'eslint-config-prettier'
 
 export default tseslint.config(
-  eslint.configs.recommended,
-  ...tseslint.configs.recommended,
   {
-    files: ['components', 'constants', 'helpers', 'pages', 'test'],
+    ignores: ['.wdio/'],
   },
-  { ignores: ['.wdio'] },
+  eslint.configs.recommended,
+  ...tseslint.configs.recommendedTypeChecked,
   {
     languageOptions: {
       globals: {
         ...globals.browser,
         ...globals.node,
       },
+      parser: tseslint.parser,
       parserOptions: {
-        project: ['tsconfig.json'],
-        tsconfigRootDir: import.meta.dirname,
+        project: true,
       },
     },
     rules: {
+      '@typescript-eslint/no-unsafe-argument': 'off',
       '@typescript-eslint/no-unused-vars': 'off',
+      'no-empty': 'off',
     },
-  }
-);
+  },
+  prettier
+)

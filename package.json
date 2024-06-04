@@ -12,6 +12,7 @@
     "@wdio/mocha-framework": "^8.38.0",
     "@wdio/spec-reporter": "^8.38.0",
     "eslint": "^9.4.0",
+    "eslint-config-prettier": "^9.1.0",
     "globals": "^15.3.0",
     "husky": "^9.0.11",
     "lint-staged": "^15.2.5",
@@ -23,8 +24,9 @@
   "scripts": {
     "clean": "rm -rf .wdio",
     "wdio": "npm run clean && wdio run ./wdio.conf.ts",
-    "generate:report": "cd .wdio && allure generate -o allure-report",
-    "prettier": "npx prettier . --write",
+    "generate-report": "allure generate --clean .wdio/allure-results -o .wdio/allure-report",
+    "prettier": "prettier . --write",
+    "eslint": "eslint .",
     "prepare": "husky install"
   }
 }

@@ -1,11 +1,11 @@
 export declare global {
-  type tPlan = 'premium' | 'business' | 'cloud';
+  type tPlan = 'premium' | 'business' | 'cloud'
   type tPaymentMethods =
     | 'creditCard'
     | 'payPal'
     | 'googlePay'
     | 'aliPay'
-    | 'coingate';
+    | 'coingate'
   type tCheckoutFormInputs =
     | 'firstName'
     | 'lastName'
@@ -13,5 +13,5 @@ export declare global {
     | 'region'
     | 'city'
     | 'street'
-    | 'zipCode';
+    | 'zipCode'
 }

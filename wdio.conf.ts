@@ -1,5 +1,4 @@
-import type { Options } from '@wdio/types';
-import HomePage from './pages/HomePage.ts';
+import type { Options } from '@wdio/types'
 
 export const config: Options.Testrunner = {
   //
@@ -230,10 +229,8 @@ export const config: Options.Testrunner = {
   /**
    * Function to be executed before a test (in Mocha/Jasmine) starts.
    */
-  beforeTest: async function () {
-    await browser.url('/');
-    await HomePage.handleCookies();
-  },
+  // beforeTest: async function () {
+  // },
   /**
    * Hook that gets executed _before_ a hook within the suite starts (e.g. runs before calling
    * beforeEach in Mocha)
@@ -262,7 +259,7 @@ export const config: Options.Testrunner = {
     { error, result, duration, passed, retries }
   ) {
     if (!passed) {
-      await browser.takeScreenshot();
+      await browser.takeScreenshot()
     }
   },
 
@@ -327,4 +324,4 @@ export const config: Options.Testrunner = {
    */
   // afterAssertion: function(params) {
   // }
-};
+}

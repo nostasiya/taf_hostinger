@@ -1,11 +1,11 @@
-import BaseComponent from './BaseComponent.ts';
+import BaseComponent from './BaseComponent.ts'
 
 export default class TextComponent extends BaseComponent {
   constructor(locator: string) {
-    super(locator);
+    super(locator)
   }
 
   async getText() {
-    return (await this.getDisplayedElement()).getText();
+    return (await this.getDisplayedElement()).getText()
   }
 }
