@@ -1,0 +1,30 @@
+{
+  "name": "taf_hostinger",
+  "type": "module",
+  "author": "Anastasiya Burlai - anastasiyaburlai@gmail.com",
+  "devDependencies": {
+    "@eslint/js": "^9.4.0",
+    "@faker-js/faker": "^8.4.1",
+    "@types/eslint__js": "^8.42.3",
+    "@wdio/allure-reporter": "^8.38.0",
+    "@wdio/cli": "^8.38.1",
+    "@wdio/local-runner": "^8.38.0",
+    "@wdio/mocha-framework": "^8.38.0",
+    "@wdio/spec-reporter": "^8.38.0",
+    "eslint": "^9.4.0",
+    "globals": "^15.3.0",
+    "husky": "^9.0.11",
+    "lint-staged": "^15.2.5",
+    "prettier": "3.3.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.4.5",
+    "typescript-eslint": "^7.12.0"
+  },
+  "scripts": {
+    "clean": "rm -rf .wdio",
+    "wdio": "npm run clean && wdio run ./wdio.conf.ts",
+    "generate:report": "cd .wdio && allure generate -o allure-report",
+    "prettier": "npx prettier . --write",
+    "prepare": "husky install"
+  }
+}
