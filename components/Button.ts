@@ -1,11 +1,11 @@
-import BaseComponent from './BaseComponent.ts';
+import BaseComponent from './BaseComponent.ts'
 
 export default class Button extends BaseComponent {
   constructor(locator: string) {
-    super(locator);
+    super(locator)
   }
 
   async click() {
-    await (await this.getDisplayedElement()).click();
+    await (await this.getDisplayedElement()).click()
   }
 }

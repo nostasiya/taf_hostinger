@@ -1,25 +1,33 @@
-import constants from '../constants/constants.ts';
+import constants from '../constants/constants.ts'
 
 export default class BaseComponent {
-  protected locator: string;
+  protected locator: string
 
   constructor(locator: string) {
-    this.locator = locator;
+    this.locator = locator
   }
 
   public async getDisplayedElement() {
-    const element = $(this.locator);
+    const element = $(this.locator)
     await browser.waitUntil(
       async () => {
-        if (await (await element).isDisplayed()) return true;
+        if (await (await element).isDisplayed()) return true
       },
       {
         timeout: constants.wait._15,
         interval: 250,
         timeoutMsg: `Element with locator [${this.locator}] is not displayed after ${constants.wait._15} ms`,
       }
-    );
+    )
 
-    return element;
+    return element
+  }
+
+  public async getAttribute(value: string) {
+    return (await $(this.locator)).getAttribute(value)
+  }
+
+  public async isDisplayed() {
+    return (await $(this.locator)).isDisplayed()
   }
 }

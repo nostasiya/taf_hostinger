@@ -1,25 +1,29 @@
 {
   "compilerOptions": {
-    "rootDir": ".",
+    "baseUrl": ".",
+    "allowImportingTsExtensions": true,
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "target": "es2022",
+    "allowJs": true,
+    "resolveJsonModule": true,
     "moduleResolution": "node",
     "module": "ESNext",
-    "target": "es2022",
-    "lib": ["es2022", "dom"],
+    "isolatedModules": true,
+    "verbatimModuleSyntax": false,
+    "strict": true,
+    "strictNullChecks": false,
+    "noUncheckedIndexedAccess": true,
+    "noImplicitOverride": true,
+    "noEmit": true,
     "types": [
       "node",
       "@wdio/globals/types",
-      "expect-webdriverio",
-      "@wdio/mocha-framework"
+      "@wdio/mocha-framework",
+      "expect-webdriverio"
     ],
-    "skipLibCheck": true,
-    "noEmit": true,
-    "allowImportingTsExtensions": true,
-    "resolveJsonModule": true,
-    "isolatedModules": true,
-    "strict": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "noFallthroughCasesInSwitch": true
+    "lib": ["es2022", "dom", "dom.iterable"]
   },
-  "include": ["test", "pages", "components", "wdio.conf.ts", "types", "helpers"],
+  "exclude": [".wdio"]
 }

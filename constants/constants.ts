@@ -8,4 +8,4 @@ export default {
     business: 'Business Web Hosting',
     cloud: 'Cloud Startup',
   },
-};
+}
